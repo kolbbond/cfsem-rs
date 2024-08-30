@@ -41,7 +41,8 @@ const ELLIPE_B: [f64; 5] = [
 ///
 ///    \[1\] M. Abramowitz and I. A. Stegun, *Handbook of mathematical functions: with formulas, graphs, and mathematical tables*. 1970.
 #[inline]
-pub fn ellipk(m: f64) -> f64 {
+#[no_mangle]
+pub extern "C" fn ellipk(m: f64) -> f64 {
     let mut ellip: f64 = 0.0;
     let c: f64 = 1.0 - m;
     let logterm = c.powi(-1).ln();
